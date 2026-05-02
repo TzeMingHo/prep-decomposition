@@ -17,8 +17,10 @@
 
 // You don't need to change this function
 async function pickFromArray() {
+  const backendURL =
+    "https://tzemingho-quote-server-backend.hosting.codeyourfuture.io/";
   try {
-    const response = await fetch("http://localhost:3000");
+    const response = await fetch(backendURL);
     const quote = await response.json();
     return quote;
   } catch (error) {
