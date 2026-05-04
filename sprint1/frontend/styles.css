@@ -10,6 +10,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  margin: 0;
   text-align: center;
   background-color: var(--primary-bg-color);
 }
@@ -22,7 +24,8 @@ body {
   font-size: larger;
   font-style: italic;
   position: relative;
-  top: 150px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 #quote {
@@ -113,4 +116,31 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#user-input-form {
+  width: 80%;
+  padding: 20px;
+  border: #ffffff 2px solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-input-form input {
+  width: 90%;
+  border: none;
+  color: var(--primary-bg-color);
+  outline: none;
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+#user-input-form label {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 6px;
 }
