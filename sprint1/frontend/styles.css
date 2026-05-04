@@ -59,6 +59,7 @@ button {
   background-color: var(--primary-bg-color);
   color: var(--primary-color);
   border: none;
+  padding: 5px;
 }
 
 .switch {
@@ -118,7 +119,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-#user-input-form {
+#add-new-quote-form {
   width: 80%;
   padding: 20px;
   border: #ffffff 2px solid;
@@ -129,7 +130,22 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-#user-input-form input {
+#user-input-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-input-field label {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 20px;
+}
+
+#user-input-field input {
   width: 90%;
   border: none;
   color: var(--primary-bg-color);
@@ -139,8 +155,14 @@ input:checked + .slider:before {
   border-radius: 5px;
 }
 
-#user-input-form label {
-  color: var(--primary-color);
-  font-weight: bold;
-  margin-bottom: 6px;
+#form-button-field {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+#form-button-field button {
+  background-color: var(--primary-color);
+  color: var(--primary-bg-color);
 }

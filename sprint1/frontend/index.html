@@ -24,12 +24,30 @@
         <p id="auto-play-notice" style="display: none">Auto-Play: On</p>
       </div>
     </div>
-    <form id="user-input-form">
-      <label for="quote-input">Add new quote:</label>
-      <input name="quote-input" type="text" />
+    <form id="add-new-quote-form">
+      <div id="user-input-field">
+        <label for="quote-input">Add new quote:</label>
+        <input
+          name="quote-input"
+          type="text"
+          id="quote-input"
+          value=""
+          required
+        />
+        <label for="author-input">Add new author:</label>
+        <input
+          name="author-input"
+          type="text"
+          id="author-input"
+          value=""
+          required
+        />
+      </div>
       <br />
-      <label for="author-input">Add new author:</label>
-      <input name="author-input" type="text" />
+      <div id="form-button-field">
+        <button type="reset" id="quote-reset-button">Reset</button>
+        <button type="submit" id="quote-submit-button">Submit</button>
+      </div>
     </form>
   </body>
 </html>

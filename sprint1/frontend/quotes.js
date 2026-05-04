@@ -529,10 +529,46 @@ function autoUpdateQuoteAndAuthor() {
   });
 }
 
+function quoteSubmitHandler(e, quote, author) {
+  e.preventDefault();
+  if (!quote || !author) {
+    window.alert("New quote or new author cannot be empty.");
+    return;
+  } else {
+    const backendURL =
+      "https://tzemingho-quote-server-backend.hosting.codeyourfuture.io/";
+    const response = fetch(backendURL, {
+      method: "POST",
+      body: JSON.stringify({ quote: quote, author: author }),
+    });
+    document.getElementById("quote-reset-button").click();
+  }
+}
+
+function addNewQuoteHandler() {
+  let quote = "";
+  let author = "";
+  const newQuoteInput = document.getElementById("quote-input");
+  const newAuthorInput = document.getElementById("author-input");
+  const quoteSubmitButton = document.getElementById("quote-submit-button");
+
+  newQuoteInput.addEventListener("input", (e) => {
+    quote = e.target.value.trim();
+  });
+  newAuthorInput.addEventListener("input", (e) => {
+    author = e.target.value.trim();
+  });
+
+  quoteSubmitButton.addEventListener("click", (e) =>
+    quoteSubmitHandler(e, quote, author),
+  );
+}
+
 window.onload = () => {
   updateQuoteAndAuthor();
   autoUpdateQuoteAndAuthor();
   document
     .getElementById("new-quote")
     .addEventListener("click", updateQuoteAndAuthor);
+  addNewQuoteHandler();
 };

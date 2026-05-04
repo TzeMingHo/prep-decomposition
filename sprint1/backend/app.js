@@ -51,6 +51,10 @@ app.post("/", (req, res) => {
         );
       return;
     }
+    if (!body.quote.trim() || !body.author.trim()) {
+      res.status(406).json({ error: "New quote or author cannot be empty." });
+      return;
+    }
     quotes.push({
       quote: body.quote,
       author: body.author,
